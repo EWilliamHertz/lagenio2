@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Lagenio Brand Colors */
+:root {
+  --primary-blue: #0052CC;
+  --dark-blue: #003399;
+  --light-blue: #E6F0FF;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-blue);
+}
+
+/* Phone Card Styles */
+.phone-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phone-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 8px 24px rgba(0, 82, 204, 0.15);
+  transform: translateY(-4px);
+}
+
+.phone-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/16;
+  background: linear-gradient(135deg, var(--light-blue), #f0f4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.phone-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+}
+
+.phone-card-body {
+  padding: 20px;
+}
+
+.phone-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.phone-card-specs {
+  list-style: none;
+  margin: 12px 0;
+}
+
+.phone-card-specs li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.phone-card-specs li:last-child {
+  border-bottom: none;
+}
+
+/* Spec Comparison Table */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.spec-table th {
+  background: var(--light-blue);
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.spec-table tr:hover {
+  background: #f9f9f9;
+}
+
+/* Coming Soon Badge */
+.coming-soon-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+/* Hype Section */
+.hype-section {
+  background: linear-gradient(135deg, var(--light-blue), #f0f4ff);
+  border: 2px solid var(--primary-blue);
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.hype-section-phone {
+  width: 200px;
+  height: 280px;
+  margin: 0 auto 20px;
+  border: 3px solid var(--primary-blue);
+  border-radius: 30px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hype-section-phone::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40%;
+  height: 25px;
+  background: black;
+  border-radius: 0 0 20px 20px;
+  transform: translateX(-50%);
+}
+
+.hype-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+.hype-release {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 15px;
+}
+
+/* Button Styles */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--dark-blue);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+}
+
+.btn-secondary:hover {
+  background: var(--light-blue);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .phone-card-title {
+    font-size: 1.25rem;
+  }
+
+  .hype-text {
+    font-size: 1.4rem;
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: 12px 8px;
+    font-size: 0.9rem;
+  }
+}
